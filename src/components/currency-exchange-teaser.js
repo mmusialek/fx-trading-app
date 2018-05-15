@@ -12,6 +12,7 @@ export class CurrencyExchangeTeaser extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    // set indicator state
     if (prevProps.buyPrice !== this.props.buyPrice) {
       if (prevProps.buyPrice < this.props.buyPrice) {
         this.setState({
@@ -32,9 +33,13 @@ export class CurrencyExchangeTeaser extends React.Component {
       "vth-currency-exchange-teaser__body__indicator--positive" :
       "vth-currency-exchange-teaser__body__indicator--negative";
 
+    // let's assume that we have 5 fraction digits
+    const fractionDigits = 5;
 
+
+    // create price number as string array
     let buyString = [];
-    const buyPriceString = this.props.buyPrice.toFixed(5).toString();
+    const buyPriceString = this.props.buyPrice.toFixed(fractionDigits).toString();
     for (let key in buyPriceString) {
       if (!buyPriceString.hasOwnProperty(key)) {
         continue;
@@ -43,8 +48,9 @@ export class CurrencyExchangeTeaser extends React.Component {
       buyString.push(<span key={key}>{buyPriceString[key]}</span>);
     }
 
+    // create price number as string array
     let sellString = [];
-    const sellPriceString = this.props.sellPrice.toFixed(5).toString();
+    const sellPriceString = this.props.sellPrice.toFixed(fractionDigits).toString();
     for (let key in sellPriceString) {
       if (!sellPriceString.hasOwnProperty(key)) {
         continue;
@@ -79,10 +85,6 @@ export class CurrencyExchangeTeaser extends React.Component {
             <div className="vth-currency-exchange-teaser__body__arrow"/>
           </div>
 
-          {/*<div className="vth-currency-exchange-teaser__body__buy">*/}
-            {/*<span className="vth-currency-exchange-teaser__body__data__wrapper__label">Buy {this.props.exchangeFromName}</span>*/}
-            {/*<span className="vth-currency-exchange-teaser__body__data__wrapper__value">{buyString}</span>*/}
-          {/*</div>*/}
         </div>
       </div>
     );

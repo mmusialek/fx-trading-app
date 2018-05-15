@@ -17,10 +17,11 @@ export class CurrencyExchangeList extends React.Component {
     });
 
 
+    // simulate data changes
     this.__intervalHandle = setInterval(p => {// load data
       const data = this.getData();
 
-      // convert, map data to our model
+      // convert data to our model
       for (let item of data) {
         const split = item.pair.split(" ");
         item.exchangeFromName = split[0];
@@ -30,7 +31,6 @@ export class CurrencyExchangeList extends React.Component {
       this.setState({
         exchanges: data
       });
-      console.log("data changed...");
 
     }, 1000);
 
@@ -42,6 +42,7 @@ export class CurrencyExchangeList extends React.Component {
     }
   }
 
+  // prepare some example data with random values
   getData() {
     return [
       {"pair": "USD CHF", "buy": this.getRandom(0.99143, 0.99163), "sell": this.getRandom(0.99043, 0.99143)},
