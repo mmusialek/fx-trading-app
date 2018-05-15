@@ -1,0 +1,139 @@
+.vth-currency-exchange-teaser {
+
+  $color-sell-indicator: #FF0101;
+  $color-buy-indicator: #008000;
+
+  background-color: #F0F0F1;
+  min-width: 296px;
+
+  //width: 300px;
+  .vth-currency-exchange-teaser__header {
+    background-color: #5C5C5D;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 3px 0;
+  }
+  .vth-currency-exchange-teaser__body {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    padding: 3px 10px 35px 10px;
+
+    .vth-currency-exchange-teaser__body__data {
+      display: flex;
+      flex-direction: row;
+      border: 2px solid #DDE1E2;
+
+      color: #C9131A;
+      cursor: pointer;
+      background-color: #ffffff;
+      width: 100%;
+
+      &--buy {
+        color: #68892E;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        padding-left: 15px;
+
+        .vth-currency-exchange-teaser__body__data__wrapper {
+          text-align: right;
+        }
+
+        &:hover {
+          border: 2px solid #4BACC6;
+          background-color: $color-buy-indicator;
+          color: #ffffff;
+        }
+      }
+
+      &--sell {
+        color: #C9131A;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding-right: 15px;
+
+        &:hover {
+          border: 2px solid #4BACC6;
+          background-color: $color-sell-indicator;
+          color: #ffffff;
+        }
+      }
+
+      .vth-currency-exchange-teaser__body__arrow {
+        // TODO arrow
+      }
+
+      .vth-currency-exchange-teaser__body__data__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 13px 3px 3px;
+        width: 100%;
+
+        .vth-currency-exchange-teaser__body__data__wrapper__label {
+          padding-bottom: 5px;
+          font-size: .7em;
+          font-weight: bold;
+        }
+        .vth-currency-exchange-teaser__body__data__wrapper__value {
+          position: relative;
+          span:last-child {
+            position: absolute;
+            font-size: 1em;
+          }
+
+          span:nth-last-child(2) {
+            font-size: 2em;
+          }
+          span:nth-last-child(3) {
+            font-size: 2em;
+          }
+        }
+      }
+
+    }
+
+    .vth-currency-exchange-teaser__body__buy {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #DDE1E2;
+      color: #68892E;
+      cursor: pointer;
+      background-color: #ffffff;
+      padding: 3px;
+
+      &:hover {
+        border: 2px solid #4BACC6;
+        background-color: $color-buy-indicator;
+        color: #ffffff;
+      }
+    }
+
+    .vth-currency-exchange-teaser__body__indicator {
+      margin: 0 3px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+
+      &--positive {
+        border-width: 0 4px 16px 4px;
+        border-color: transparent transparent $color-buy-indicator transparent;
+      }
+      &--negative {
+        border-color: $color-sell-indicator transparent transparent transparent;
+        border-width: 16px 4px 0 4px;
+      }
+    }
+  }
+
+}
+
+// 5C5C5D header
+//FFFFFF - div background
+//DDE1E2 - border
+
+// C9131A sell
+// 68892E buy
+
+// 008000 green arrow
+// FF0101 red arrow
+// 4BACC6 hover border

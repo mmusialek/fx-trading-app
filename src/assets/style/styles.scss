@@ -1,0 +1,14 @@
+@import "reset";
+@import "colors";
+@import "variables";
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 1em;
+  height: 100%;
+  background-color: $primary-color;
+  color: $font-primary-color;
+  margin: 0;
+}
