@@ -4,6 +4,10 @@ import './currency-exchange-teaser.scss';
 
 export class CurrencyExchangeTeaser extends React.Component {
 
+  constructor(props){
+    super(props);
+
+  }
 
   componentWillMount() {
     this.setState({
@@ -71,18 +75,24 @@ export class CurrencyExchangeTeaser extends React.Component {
               <span className="vth-currency-exchange-teaser__body__data__wrapper__label">Sell {this.props.exchangeFromName}</span>
               <span className="vth-currency-exchange-teaser__body__data__wrapper__value">{sellString}</span>
             </div>
-            <div className="vth-currency-exchange-teaser__body__arrow"/>
+            <div className="vth-currency-exchange-teaser__body__arrow vth-currency-exchange-teaser__body__arrow--right">
+              <div className="vth-currency-exchange-teaser__body__arrow__inner"/>
+            </div>
           </div>
 
           <div className={"vth-currency-exchange-teaser__body__indicator " + indicatorClass}>
           </div>
 
           <div className="vth-currency-exchange-teaser__body__data vth-currency-exchange-teaser__body__data--buy">
+
+            <div className="vth-currency-exchange-teaser__body__arrow vth-currency-exchange-teaser__body__arrow--left">
+              <div className="vth-currency-exchange-teaser__body__arrow__inner"/>
+            </div>
+
             <div className="vth-currency-exchange-teaser__body__data__wrapper">
               <span className="vth-currency-exchange-teaser__body__data__wrapper__label">Buy {this.props.exchangeFromName}</span>
               <span className="vth-currency-exchange-teaser__body__data__wrapper__value">{buyString}</span>
             </div>
-            <div className="vth-currency-exchange-teaser__body__arrow"/>
           </div>
 
         </div>
